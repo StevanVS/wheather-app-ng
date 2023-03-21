@@ -1,0 +1,28 @@
+<div class="card text-center text-dark mb-3 shadow-sm placeholder-glow">
+  <div class="card-body justify-content-center">
+    <form [formGroup]="cityForm" (submit)="onSubmit()">
+      <div class="input-group mb-3">
+        <input class="form-control" type="text" formControlName="city" />
+        <button type="submit" class="btn btn-dark">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </form>
+    <h3 class="card-title col-9 m-auto" [class.placeholder]="isLoading">
+      {{ weather.name }}
+    </h3>
+
+    <img [src]="weatherIconUrl" />
+
+    <h4 class="card-subtitle mb-2 col-8 m-auto" [class.placeholder]="isLoading">
+      {{ weather.description }}
+    </h4>
+
+    <p class="card-text mb-0 col-7 m-auto" [class.placeholder]="isLoading">
+      Temperatura: {{ weather.temperature }} ºC
+    </p>
+    <p class="card-text mb-0 col-7 m-auto" [class.placeholder]="isLoading">
+      Humedad: {{ weather.humidity }} %
+    </p>
+  </div>
+</div>
