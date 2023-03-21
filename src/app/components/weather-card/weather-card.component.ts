@@ -42,7 +42,7 @@ export class WeatherCardComponent {
 
         this.weatherIconUrl = `https://openweathermap.org/img/wn/${this.weather.icon}@4x.png`;
 
-        console.log(value);
+        // console.log(value);
       },
     });
   }
@@ -51,5 +51,7 @@ export class WeatherCardComponent {
     this.getWeather(this.cityForm.value.city ?? '');
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getWeather('Chone');
+  }
 }
