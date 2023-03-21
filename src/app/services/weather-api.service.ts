@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
 export class WeatherAPIService {
   private url = new URL('https://api.openweathermap.org/data/2.5/weather');
   constructor(private http: HttpClient) {
-    this.url.searchParams.append('APPID', '3b1426a43ba4674002357fb2337e9adb');
+    this.url.searchParams.append('APPID', environment.wheaterApiKey);
     this.url.searchParams.append('units', 'metric');
     this.url.searchParams.append('lang', 'es');
   }
